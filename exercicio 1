@@ -1,0 +1,25 @@
+
+alturas = []
+generos = []
+
+for i in range(15):
+   
+    altura = float(input(f"Digite a altura:"))
+    genero = input(f"Digite o gênero: ").strip().capitalize()
+    
+
+    alturas.append(altura)
+    generos.append(genero)
+
+maior_altura = max(alturas)
+menor_altura = min(alturas)
+
+alturas_masculinas = [alturas[i] for i in range(15) if generos[i] == 'M']
+media_masculino = sum(alturas_masculinas) / len(alturas_masculinas) if alturas_masculinas else 0
+
+num_feminino = generos.count('F')
+
+print(f"\nMaior altura do grupo: {maior_altura}m")
+print(f"Menor altura do grupo: {menor_altura}m")
+print(f"Média de altura do gênero Masculino: {media_masculino:.2f}m")
+print(f"Número de pessoas do gênero Feminino: {num_feminino}")
